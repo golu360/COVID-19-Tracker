@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '59+@s1^etkkg@t^787&qca2m8_$ja3tho3-fm$x2a@cl7zaa%8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://covid-19-gandhinagar.herokuapp.com/']
 
