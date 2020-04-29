@@ -4,6 +4,14 @@
 	<title>Gandhinagar COVID-19 MAP</title>
 	<link rel = "stylesheet" href = '{%static "css/leaflet.css"%}'/>
     <script src = "{%static 'js/leaflet.js'%}"></script>
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+
+
+    <style>
+    	body {
+    font-family: 'Alef';font-size: 22px;
+}
+</style>
 </head>
 <body>
 
@@ -51,7 +59,7 @@
 
 		
 	</script>
-<h1> Total Number of Cases(inc Active & Inactive):{{total}}</h1>
+<p> Total Number of Cases(inc Active & Inactive):{{total}}</p>
 
 </body>
 </html>
