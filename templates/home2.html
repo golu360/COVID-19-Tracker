@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gandhinagar COVID-19 MAP</title>
+	<link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+<body>
+
+	<div id='mymap'></div>
+	<script type='text/javascript'>
+		var mapOptions = {
+			center:[23.2156, 72.6369],
+			zoom:15
+		};
+
+		var map = L.map('mymap',mapOptions);
+
+
+		var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+		{%for case in cases%}
+		var coords = {{case}}
+		
+		marker.addTo(map);
+		{%endfor%}
+		
+	</script>
+
+
+</body>
+</html>

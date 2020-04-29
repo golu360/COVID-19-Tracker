@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gandhinagar COVID-19 MAP</title>
+	<link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+<body>
+
+	<div id='mymap' style = "width: 100%; height: 75vh;"></div>
+	<script type='text/javascript'>
+		var mapOptions = {
+			center:[23.2156, 72.6369],
+			zoom:15
+		};
+
+		var map = L.map('mymap',mapOptions);
+
+
+		var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+		layer.addTo(map);
+
+		{%for c in cases%}
+		var x =  '{{c.coordinates_X}}'
+		var y = '{{c.coordinates_Y}}'
+
+		var greenIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [24, 36],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+		var circleOptions = {
+			color:'red'
+		}
+
+		var marker = L.marker([x,y],{icon:greenIcon})
+		var description = '{{c.description}}'
+		marker.bindPopup(description).openPopup();
+		marker.addTo(map)
+
+		var circle = L.circle([x,y],250,circleOptions);
+
+		circle.addTo(map);
+
+		{%endfor%}
+
+
+		
+	</script>
+<h1>{{total}}</h1>
+
+</body>
+</html>

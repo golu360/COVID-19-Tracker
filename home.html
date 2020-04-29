@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>COVID-19 Gujarat</title>
+</head>
+
+<body>
+<script src='https://code.highcharts.com/highcharts.src.js'></script>
+<div id='container'></div>
+<script>
+	 Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'COVID-19 Gujarat'
+      },
+      xAxis: {
+          categories: {{ names|safe }}
+      },
+      series: [{
+          name: 'Positive Cases',
+          data: {{ positives }},
+          color: 'green'
+      }, {
+          name: 'Deaths',
+          data: {{ deaths }},
+          color: 'orange'
+      },
+      {
+          name: 'Recovered',
+          data: {{ recovered }},
+          color: 'skyblue'
+      },
+      {
+          name: 'Quarantined',
+          data: {{quarantined }},
+          color: 'purple'
+      },
+      {
+          name: 'Tested',
+          data: {{ tested}},
+          color: 'yellow'
+      },]
+  });
+	</script>
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
