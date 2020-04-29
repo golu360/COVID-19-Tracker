@@ -1,1 +1,1 @@
-web: gunincorn tracker.wsgi --log-file - 
+web: gunicorn gettingstarted.wsgi --log-file -
