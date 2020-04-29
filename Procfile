@@ -1,1 +1,1 @@
-web: python manage.py runserver 
+web: gunincorn tracker.wsgi --log-file - 
