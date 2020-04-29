@@ -20,5 +20,5 @@ import track.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^home/',views.home,name='home')
+    url(r'^$',views.home,name='home')
 ]
