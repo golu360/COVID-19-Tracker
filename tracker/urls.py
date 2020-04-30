@@ -20,5 +20,6 @@ import track.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$',views.home,name='home')
+    url(r'^$',views.home,name='home'),
+    url('^stats/',views.stats,name='statistics')
 ]
