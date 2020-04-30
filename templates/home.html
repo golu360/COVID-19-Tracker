@@ -1,21 +1,8 @@
-{% load static %}<!DOCTYPE html>
-<html>
-<head>
-	<title>Gandhinagar COVID-19 MAP</title>
-	<link rel = "stylesheet" href = '{%static "css/leaflet.css"%}'/>
-    <script src = "{%static 'js/leaflet.js'%}"></script>
-    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
 
+{%extends 'base.html'%}
+{%block content%}
 
-    <style>
-    	body {
-    font-family: 'Alef';font-size: 22px;
-}
-</style>
-</head>
-<body>
-
-	<div id='mymap' style = "width: 100%; height: 75vh;"></div>
+	<div id='mymap' style = "width: 100%; height: 85vh;"></div>
 	<script type='text/javascript'>
 		var mapOptions = {
 			center:[23.2156, 72.6369],
@@ -33,8 +20,8 @@
 		var y = '{{c.coordinates_Y}}'
 
 		var greenIcon = new L.Icon({
-  iconUrl: "{%static 'images/marker-icon-2x-red.png'%}",
-  shadowUrl: '{%static "images/marker-shadow.png"%}',
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   iconSize: [24, 36],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -60,6 +47,4 @@
 		
 	</script>
 
-
-</body>
-</html>
+{%endblock%}

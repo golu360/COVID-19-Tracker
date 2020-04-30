@@ -1,0 +1,53 @@
+<div id='container' class='col-4' style='margin-top: 100px;border-width: 2px;'></div>
+
+
+<script type='text/javascript'>
+	
+	Highcharts.chart('container',{
+		chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'COVID-19 Statistics in Gandhinagar City'
+  },
+  
+  accessibility: {
+    point: {
+      valueSuffix: '%'
+    }
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+      }
+    }
+  },
+  series: [{
+    name: 'Total',
+    
+    data: [{
+    	name:'Recovered',
+    	y:{{recovered|safe}},
+    	color:'#B3E5FC'
+    },
+    {
+    	name:'Active',
+    	y:{{hospitalized|safe}},
+    	color:'#448AFF'
+    },
+    {
+    	name:'Deaths',
+    	y:{{deaths|safe}},
+    	color:'#0288D1'
+    }]
+}]
+	})
+  
+	</script>
