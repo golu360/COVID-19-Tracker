@@ -14,7 +14,7 @@ Age,Gender,Location,Address,Status
 52,F,Sector-3C,Plot No: 698/1,Hospitalized
 63,M,Sector-3C,Plot No:698/1,Hospitalized
 39,M,Sector-3C,Plot No: 698/1,Hospitalized
-25,F,Sector-7D,Plot No:1207/2,Hospitalized
+25,F,Sector-7D,Plot No:1207/2,Discharged
 Unknown,M,Sector-3C,Plot No:698/1,Hospitalized
 59,M,Sector-3C,Plot No:698/1,Hospitalized
 Unknown,M,Sector-2B,Plot No:175/1,Hospitalized
@@ -29,3 +29,4 @@ Unknown,M,Sector-3 New,Plot No:114/1,Hospitalized
 23,M,Sector-24,Shreenagar Society,Hospitalized
 70,F,Sector-2B,Plot No: 1453/2,Hospitalized
 31,M ,Sector-2B,Plot No:433/2,Hospitalized
+28,F,Sector-22,"1-Pushpak Flats,Plot No:558",Hospitalized
