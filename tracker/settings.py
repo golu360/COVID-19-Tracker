@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'track'
+    'track',
+    'google_analytics'
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,10 @@ STATICFILES_DIRS = [
 
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': 'UA-165397901-1',
+}
 
 
 django_heroku.settings(locals())

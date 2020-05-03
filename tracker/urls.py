@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from django.conf.urls import url
 import track.views as views
 
@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.home,name='home'),
     url('^stats/',views.stats,name='statistics'),
-    url('^aboutus/',views.aboutus,name='aboutus')
+    url('^aboutus/',views.aboutus,name='aboutus'),
+    re_path('djga/', include('google_analytics.urls')),  
 ]
