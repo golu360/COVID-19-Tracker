@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+
+{%block stylesheet%}
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+{%endblock%}
+{%block content%}
+{%include 'includes/analytics.html'%}
+<div class='container-fluid'>
+	
+
+<div class = 'container-fluid'>
+<div class='d-flex flex-column col-12'>
+
+{%include 'includes/piechart.html'%}
+<hr style='color: grey;'>
+<div id='container2' class='col-12' style='margin-top: 10px;border-width: 2px;'></div>
+
+<script>
+  Highcharts.chart('container2', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Cases by Sectors'
+      },
+      xAxis: {
+          categories: {{ locations|safe }}
+      },
+      series: [{
+          name: 'Cases',
+          data: {{ cases }},
+          color: '#448AFF'
+      },]
+  });
+</script>
+
+
+
+</div>
+</div>
+</div>
+
+{%endblock%}
