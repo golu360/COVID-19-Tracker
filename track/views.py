@@ -27,30 +27,8 @@ def home(request):
 
 
 def stats(request):
-    data = pd.read_csv('data/patient_data.csv')
+    data = pd.read_csv('data/stats.csv')
 
-    recovered = list()
-    hospitalized = list()
-    deaths = list()
-    locations = list()
-    case_by_loc = list()
-
-    for d in data['Status']:
-        if d == 'Discharged':
-            recovered.append(d)
-        if d =='Hospitalized':
-            hospitalized.append(d)
-        if d =='Death':
-            deaths.append(d)
-
-    ##FOR COLUMN CHART
-
-    unique = data['Location'].unique()
-    counts = data['Location'].value_counts()
-
-    for i in unique:
-        locations.append(i)
-        case_by_loc.append(int(counts[i]))
 
            
 
@@ -59,11 +37,12 @@ def stats(request):
 
 
     context = {
-        'recovered':json.dumps(len(recovered)),
-        'hospitalized':json.dumps(len(hospitalized)),
-        'deaths':json.dumps(len(deaths)),
-        'locations':json.dumps(locations),
-        'cases':json.dumps(case_by_loc)
+        'active':data['Active'][0],
+        'cured':data['Discharged'][0],
+        'quarantine':data['Quarantined'][0],
+        'deaths':data['Deaths'][0],
+        'total':data['Total'][0]
+        
     }        
 
 
@@ -73,6 +52,7 @@ def stats(request):
 
 
     return render(request,'statistics.html',context=context)
+
 
 
 

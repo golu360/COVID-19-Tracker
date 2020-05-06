@@ -5,15 +5,96 @@
 <script src="https://code.highcharts.com/highcharts.src.js"></script>
  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+ <style>
+ 	.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 20%;
+  padding: 20px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+ </style>
+
 {%endblock%}
 {%block content%}
-{%include 'includes/analytics.html'%}
-<div class="row" style="margin-top: 50px;">
-      <div class="col-lg-4 col-sm-1  bg-white" ></div>
-      <div class="col-lg-4 col-sm-10 text-justify " style='background-color: white;margin-left:10px;font-size: 18px; ' >
-        <p class='text-dark'>This page is currently being updated, check it out soon for more updates
-  </p></div>
-        <div class="col-lg-4 col-sm-1 bg-white" ></div>
-    </div>
+<div class='flex-container'>
+
+<div class="row" style='margin-top: 25px;'>
+	<div class='column'>
+	<div class='card border border-primary'>
+		<div class='card-header text-center text-white' style='background-color: #448AFF;'>
+			<p>Active Cases</p>
+		</div>
+		<div class='card-body text-center'>
+			<p>{{active}}</p>
+		</div>
+	</div>
+</div>
+
+<div class='column'>
+	<div class='card border border-primary'>
+		<div class='card-header text-center text-white' style='background-color: #448AFF;'>
+			<p>Quarantined</p>
+		</div>
+		<div class='card-body text-center'>
+			<p>{{quarantine}}</p>
+		</div>
+	</div>
+</div>
+
+<div class='column'>
+<div class='card border border-primary'>
+		<div class='card-header text-center text-white' style='background-color: #448AFF;'>
+			<p>Deaths</p>
+		</div>
+		<div class='card-body text-center'>
+			<p>{{deaths}}</p>
+		</div>
+	</div>
+</div>
+
+<div class='column'>
+<div class='card border border-primary'>
+		<div class='card-header text-center text-white' style='background-color: #448AFF;'>
+			<p>Discharged</p>
+		</div>
+		<div class='card-body text-center'>
+			<p>{{cured}}</p>
+		</div>
+	</div>
+</div>
+
+<div class='column'>
+	<div class='card border border-primary'>
+		<div class='card-header text-center text-white' style='background-color: #448AFF;'>
+			<p>Total</p>
+		</div>
+		<div class='card-body text-center'>
+			<p>{{total}}</p>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+
+
 
 {%endblock%}
